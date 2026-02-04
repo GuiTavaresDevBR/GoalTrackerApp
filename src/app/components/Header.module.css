@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(178, 178, 255);
+  padding: 10px;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
+.header span {
+  font-size: 35px;
+  font-weight: bold;
+  color: rgb(63, 63, 201);
+}
+
+.header div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
