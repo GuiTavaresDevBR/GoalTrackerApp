@@ -1,10 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import AccountContainer from "./components/AccountContainer/AccountContainer";
 
 export default function Home() {
   return (
-    <div>
-      <h2> Ola </h2>
-    </div>
+    <main className={styles.main}>
+      <AccountContainer />
+    </main>
   );
 }
