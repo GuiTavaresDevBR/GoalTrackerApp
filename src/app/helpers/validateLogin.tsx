@@ -1,4 +1,3 @@
-import { error } from "console";
 import { isEmailValid } from "./isEmailValid";
 
 export interface LoginErrors {
