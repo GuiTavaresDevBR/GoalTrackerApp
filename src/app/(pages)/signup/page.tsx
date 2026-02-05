@@ -7,6 +7,10 @@ export default function signup() {
       <AccountContainer title="SignUp">
         <form action="">
           <div>
+            <label htmlFor="name">Informe seu Nome:</label>
+            <input type="text" id="name" name="name" />
+          </div>
+          <div>
             <label htmlFor="email">Informe seu Email:</label>
             <input type="email" id="email" name="email" />
           </div>
