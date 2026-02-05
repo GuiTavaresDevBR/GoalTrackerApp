@@ -63,4 +63,5 @@
   background-position: center;
   background-size: cover;
   box-shadow: 4px 4px 4px rgb(200, 200, 200);
+  border-radius: 40px;
 }

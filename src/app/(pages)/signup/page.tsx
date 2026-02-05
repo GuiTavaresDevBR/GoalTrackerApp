@@ -14,7 +14,7 @@ export default function Signup() {
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    
+
     const validadeErrors: SignupErrors = validateSignUpForm(
       typedName,
       typedEmail,
@@ -33,6 +33,7 @@ export default function Signup() {
             <input
               type="text"
               id="name"
+              placeholder="Informe seu Nome:"
               name="name"
               value={typedName}
               onChange={(e) => setTypedName(e.target.value)}
@@ -43,6 +44,7 @@ export default function Signup() {
             <input
               type="email"
               id="email"
+              placeholder="Informe seu Email:"
               name="email"
               value={typedEmail}
               onChange={(e) => setTypedEmail(e.target.value)}
@@ -53,6 +55,7 @@ export default function Signup() {
             <input
               type="password"
               id="password"
+              placeholder="Informe sua Senha:"
               name="password"
               value={typedPassword}
               onChange={(e) => setTypedPassword(e.target.value)}
@@ -63,6 +66,7 @@ export default function Signup() {
             <input
               type="password"
               id="confirmPassword"
+              placeholder="Confirme sua Senha:"
               name="confirmPassword"
               value={typedConfirmPassword}
               onChange={(e) => setTypedConfirmPassword(e.target.value)}

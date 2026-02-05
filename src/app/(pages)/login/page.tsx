@@ -23,9 +23,6 @@ export default function Login() {
     );
     setErrors(validationErrors);
 
-    if (Object.keys(validationErrors).length === 0) {
-      alert("Login bem sucedido!");
-    }
     // Lógica de autenticação aqui
   }
 
@@ -38,6 +35,7 @@ export default function Login() {
             <input
               type="email"
               id="email"
+              placeholder="Informe seu Email"
               name="email"
               value={typedEmail}
               onChange={(e) => setTypedEmail(e.target.value)}
@@ -54,6 +52,7 @@ export default function Login() {
             <input
               type="password"
               id="password"
+              placeholder="Informe sua Senha:"
               name="password"
               value={typedPassword}
               onChange={(e) => setTypedPassword(e.target.value)}
