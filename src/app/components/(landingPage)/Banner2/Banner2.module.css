@@ -1,5 +1,5 @@
 .bannerContainer {
-  height: 80px;
+  min-height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,4 +8,7 @@
   width: 100%;
   color: rgb(20, 20, 120);
   font-style: italic;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px;
 }

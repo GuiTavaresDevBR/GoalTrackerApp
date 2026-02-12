@@ -7,6 +7,8 @@ export default function Banner2() {
         Nós somos aquilo que fazemos repetidamente; a excelência, portanto, não
         é um ato, mas um hábito ...
       </h2>
+      <h3> Comece Hoje.</h3>
+      <button> Seu futuro Agradesce</button>
     </div>
   );
 }
