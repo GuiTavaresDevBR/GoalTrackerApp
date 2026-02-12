@@ -4,21 +4,35 @@ import { UserType } from "../types/UserType";
 type AuthContextType = {
   userLists: UserType[];
   setUserLists: React.Dispatch<React.SetStateAction<UserType[]>>;
-  handleVerifyLogin: (email: string, password: string) => UserType | undefined;
+  loggedUser: UserType | null;
+  setLoggedUser: React.Dispatch<React.SetStateAction<UserType | null>>;
+  handleExecuteLogin: (email: string, password: string) => UserType | undefined;
+  handleExecuteLogout: () => void;
   handleCreateUser: (name: string, email: string, password: string) => void;
   handleVerifyIfUserExists: (email: string) => UserType | undefined;
+  handleRemoveUser: (id: string) => void;
 };
 
 export const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [userLists, setUserLists] = useState<UserType[]>([]);
+  const [loggedUser, setLoggedUser] = useState<UserType | null>(null);
 
-  function handleVerifyLogin(email: string, password: string) {
+  function handleExecuteLogin(email: string, password: string) {
     const findUserByEmailAndPassword = userLists.find(
       (user) => user.email === email && user.password === password,
     );
+    if (findUserByEmailAndPassword) {
+      setLoggedUser(findUserByEmailAndPassword);
+      localStorage.setItem("user", findUserByEmailAndPassword.id);
+    }
     return findUserByEmailAndPassword;
+  }
+
+  function handleExecuteLogout() {
+    localStorage.removeItem("user");
+    setLoggedUser(null);
   }
 
   function handleVerifyIfUserExists(email: string) {
@@ -37,14 +51,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setUserLists((prev) => [...prev, newUser]);
   }
 
+  function handleRemoveUser(id: string) {
+    setUserLists((prev) => prev.filter((user) => user.id !== id));
+    handleExecuteLogout();
+  }
+
   return (
     <AuthContext.Provider
       value={{
         userLists,
         setUserLists,
-        handleVerifyLogin,
+        handleExecuteLogin,
+        handleExecuteLogout,
         handleCreateUser,
         handleVerifyIfUserExists,
+        loggedUser,
+        setLoggedUser,
+        handleRemoveUser,
       }}
     >
       {children}
