@@ -107,7 +107,13 @@ export default function Signup() {
           <button type="submit">Sign Up</button>
         </form>
       </AccountContainer>
-      {isModalOpen && <MessageModal message={message} isDanger={isDanger} setIsModalOpen={setIsModalOpen} />}
+      {isModalOpen && (
+        <MessageModal
+          message={message}
+          isDanger={isDanger}
+          setIsModalOpen={setIsModalOpen}
+        />
+      )}
     </div>
   );
 }

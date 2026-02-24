@@ -4,6 +4,10 @@ import style from "./page.module.css";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useContext, useState } from "react";
+import { AuthContext } from "@/app/contexts/AuthContext";
+import MessageModal from "@/app/components/Modals/MessageModal/MessageModal";
+import { useRouter } from "next/navigation";
 
 const loginSchema = z.object({
   email: z.email("Email inválido"),
@@ -21,8 +25,23 @@ export default function Login() {
     resolver: zodResolver(loginSchema),
   });
 
+  const router = useRouter();
+  const ctx = useContext(AuthContext);
+  const [message, setMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   function handleSubtmit(data: loginFormData) {
-    console.log(data);
+    if (!ctx?.verifyIfUserExists(data.email)) {
+      setMessage("Usuário não encontrado");
+      setIsModalOpen(true);
+      return;
+    }
+    if (!ctx?.executeLogin(data.email, data.password)) {
+      setMessage("Senha incorreta");
+      setIsModalOpen(true);
+      return;
+    }
+    router.push("/dashboard");
   }
 
   return (
@@ -54,6 +73,13 @@ export default function Login() {
           <button type="submit">Login</button>
         </form>
       </AccountContainer>
+      {isModalOpen && (
+        <MessageModal
+          message={message}
+          isDanger={true}
+          setIsModalOpen={setIsModalOpen}
+        />
+      )}
     </div>
   );
 }
