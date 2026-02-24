@@ -4,6 +4,8 @@ import style from "./page.module.css";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "@/app/contexts/AuthContext";
 
 const signUpSchema = z
   .object({
@@ -30,11 +32,15 @@ export default function Signup() {
     resolver: zodResolver(signUpSchema),
   });
 
+  const ctx = useContext(AuthContext);
+
   function handleSubtmit(data: signUpFormData) {
-    if (data.password !== data.confirmPassword) {
-      alert("As senhas não coincidem");
+    if (ctx?.verifyIfUserExists(data.email)) {
+      alert("Email já cadastrado");
       return;
     }
+    ctx?.createUser(data.name, data.email, data.password);
+    alert("Usuário criado com sucesso!");
   }
 
   return (

@@ -4,6 +4,6 @@ export type UserType = {
   email: string;
   password: string;
   lastLoginAt?: Date | null;
-  createdAt: Date;
+  createdAt?: Date;
   updatedAt?: Date;
 };
