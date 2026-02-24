@@ -1,20 +1,26 @@
 .container {
+  background-color: rgba(0, 0, 0, 0.658);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .loader {
   position: relative;
-  width: 48px;
-  height: 48px;
+  width: 88px;
+  height: 88px;
   animation: spin 1s linear infinite;
 }
 
 .loader span {
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 24px;
+  height: 24px;
   background: #3b82f6;
   border-radius: 50%;
 }

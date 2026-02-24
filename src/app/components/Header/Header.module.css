@@ -28,3 +28,10 @@
 .header a:hover {
   text-decoration: underline;
 }
+
+.header h2 {
+  cursor: pointer;
+}
+.header h2:hover {
+  text-decoration: underline;
+}
