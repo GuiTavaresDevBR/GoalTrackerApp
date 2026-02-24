@@ -14,7 +14,7 @@ const signUpSchema = z
       .string()
       .min(6, "A confirmação de senha deve conter no mínimo 6 caracteres"),
   })
-  .refine((data) => data.password === data.confirmPassword, {
+  .refine((data) => data.password !== data.confirmPassword, {
     message: "As senhas não coincidem",
   });
 
@@ -30,7 +30,10 @@ export default function Signup() {
   });
 
   function handleSubtmit(data: signUpFormData) {
-    console.log(data);
+    if (data.password !== data.confirmPassword) {
+      alert("As senhas não coincidem");
+      return;
+    }
   }
 
   return (
@@ -38,54 +41,56 @@ export default function Signup() {
       <AccountContainer title="SignUp">
         <form onSubmit={handleSubmit(handleSubtmit)}>
           <div>
-            <label htmlFor="name">Informe seu Nome:</label>
+            <label htmlFor="name">Name:</label>
             <input
+              id="name"
               type="text"
-              placeholder="Informe seu Nome:"
               {...register("name")}
+              placeholder="Informe seu Nome..."
             />
-            <div className={style.errorContainer}>
-              {errors.name && <span>{errors.name.message}</span>}
-            </div>
+            <div>{errors.name && <span>{errors.name.message}</span>}</div>
           </div>
+
           <div>
-            <label htmlFor="email">Informe seu Email:</label>
+            <label htmlFor="email">Email:</label>
             <input
+              id="email"
               type="email"
-              placeholder="Informe seu Email:"
               {...register("email")}
+              placeholder="Informe seu Email..."
             />
-            <div className={style.errorContainer}>
-              {errors.email && <span>{errors.email.message}</span>}
-            </div>
+            <div>{errors.email && <span>{errors.email.message}</span>}</div>
           </div>
+
           <div>
-            <label htmlFor="password">Informe sua Senha:</label>
+            <label htmlFor="password">Password:</label>
             <input
+              id="password"
               type="password"
-              placeholder="Informe sua Senha:"
               {...register("password")}
+              placeholder="Informe sua senha..."
             />
-            <div className={style.errorContainer}>
+            <div>
               {errors.password && <span>{errors.password.message}</span>}
             </div>
           </div>
+
           <div>
-            <label htmlFor="confirmPassword">Confirme sua Senha:</label>
+            <label htmlFor="confirmPassword">Confirm Password</label>
             <input
+              id="confirmPassword"
               type="password"
-              placeholder="Confirme sua Senha:"
               {...register("confirmPassword")}
+              placeholder="Confirme sua senha..."
             />
-            <div className={style.errorContainer}>
+            <div>
               {errors.confirmPassword && (
                 <span>{errors.confirmPassword.message}</span>
               )}
             </div>
           </div>
-          <div>
-            <button type="submit">Cadastrar</button>
-          </div>
+
+          <button type="submit">Sign Up</button>
         </form>
       </AccountContainer>
     </div>
