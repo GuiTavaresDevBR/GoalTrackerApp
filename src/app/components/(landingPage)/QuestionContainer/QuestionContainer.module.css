@@ -20,6 +20,7 @@
   color: rgb(30, 30, 165);
   font-weight: bolder;
   border-color: rgb(30, 30, 165);
+  font-size: 18px;
 }
 .header:hover {
   background-color: white;
@@ -36,4 +37,5 @@
   border-color: rgb(30, 30, 165);
   font-style: italic;
   letter-spacing: 1px;
+  line-height: 25px;
 }

@@ -1,81 +1,90 @@
 "use client";
 import AccountContainer from "@/app/components/AccountContainer/AccountContainer";
 import style from "./page.module.css";
-import { useState } from "react";
-import { LoginErrors } from "@/app/helpers/validateLogin";
-import { SignupErrors, validateSignUpForm } from "@/app/helpers/validateSignUp";
+import z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+
+const signUpSchema = z
+  .object({
+    name: z.string().min(2, "O nome deve conter no mínimo 2 caracteres"),
+    email: z.email("Email inválido"),
+    password: z.string().min(6, "A senha deve conter no mínimo 6 caracteres"),
+    confirmPassword: z
+      .string()
+      .min(6, "A confirmação de senha deve conter no mínimo 6 caracteres"),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "As senhas não coincidem",
+  });
+
+type signUpFormData = z.infer<typeof signUpSchema>;
 
 export default function Signup() {
-  const [errors, setErrors] = useState<SignupErrors>({});
-  const [typedName, setTypedName] = useState("");
-  const [typedEmail, setTypedEmail] = useState("");
-  const [typedPassword, setTypedPassword] = useState("");
-  const [typedConfirmPassword, setTypedConfirmPassword] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<signUpFormData>({
+    resolver: zodResolver(signUpSchema),
+  });
 
-  function handleSubmit(event: React.FormEvent) {
-    event.preventDefault();
-
-    const validadeErrors: SignupErrors = validateSignUpForm(
-      typedName,
-      typedEmail,
-      typedPassword,
-      typedConfirmPassword,
-    );
-    setErrors(validadeErrors);
+  function handleSubtmit(data: signUpFormData) {
+    console.log(data);
   }
 
   return (
     <div className={style.signupPage}>
       <AccountContainer title="SignUp">
-        <form action="">
+        <form onSubmit={handleSubmit(handleSubtmit)}>
           <div>
             <label htmlFor="name">Informe seu Nome:</label>
             <input
               type="text"
-              id="name"
               placeholder="Informe seu Nome:"
-              name="name"
-              value={typedName}
-              onChange={(e) => setTypedName(e.target.value)}
+              {...register("name")}
             />
+            <div className={style.errorContainer}>
+              {errors.name && <span>{errors.name.message}</span>}
+            </div>
           </div>
           <div>
             <label htmlFor="email">Informe seu Email:</label>
             <input
               type="email"
-              id="email"
               placeholder="Informe seu Email:"
-              name="email"
-              value={typedEmail}
-              onChange={(e) => setTypedEmail(e.target.value)}
+              {...register("email")}
             />
+            <div className={style.errorContainer}>
+              {errors.email && <span>{errors.email.message}</span>}
+            </div>
           </div>
           <div>
             <label htmlFor="password">Informe sua Senha:</label>
             <input
               type="password"
-              id="password"
               placeholder="Informe sua Senha:"
-              name="password"
-              value={typedPassword}
-              onChange={(e) => setTypedPassword(e.target.value)}
+              {...register("password")}
             />
+            <div className={style.errorContainer}>
+              {errors.password && <span>{errors.password.message}</span>}
+            </div>
           </div>
           <div>
             <label htmlFor="confirmPassword">Confirme sua Senha:</label>
             <input
               type="password"
-              id="confirmPassword"
               placeholder="Confirme sua Senha:"
-              name="confirmPassword"
-              value={typedConfirmPassword}
-              onChange={(e) => setTypedConfirmPassword(e.target.value)}
+              {...register("confirmPassword")}
             />
+            <div className={style.errorContainer}>
+              {errors.confirmPassword && (
+                <span>{errors.confirmPassword.message}</span>
+              )}
+            </div>
           </div>
           <div>
-            <button type="submit" onClick={handleSubmit}>
-              Cadastrar
-            </button>
+            <button type="submit">Cadastrar</button>
           </div>
         </form>
       </AccountContainer>
