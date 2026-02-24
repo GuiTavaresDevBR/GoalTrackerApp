@@ -14,8 +14,9 @@ const signUpSchema = z
       .string()
       .min(6, "A confirmação de senha deve conter no mínimo 6 caracteres"),
   })
-  .refine((data) => data.password !== data.confirmPassword, {
+  .refine((data) => data.password === data.confirmPassword, {
     message: "As senhas não coincidem",
+    path: ["confirmPassword"],
   });
 
 type signUpFormData = z.infer<typeof signUpSchema>;

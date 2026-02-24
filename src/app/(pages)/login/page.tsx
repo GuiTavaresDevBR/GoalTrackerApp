@@ -21,10 +21,14 @@ export default function Login() {
     resolver: zodResolver(loginSchema),
   });
 
+  function handleSubtmit(data: loginFormData) {
+    console.log(data);
+  }
+
   return (
     <div className={style.loginPage}>
       <AccountContainer title="Login">
-        <form onSubmit={handleSubmit((data) => console.log(data))}>
+        <form onSubmit={handleSubmit(handleSubtmit)}>
           <div>
             <label htmlFor="email">Email:</label>
             <input
@@ -37,7 +41,12 @@ export default function Login() {
           </div>
           <div>
             <label htmlFor="password">Password:</label>
-            <input id="password" type="password" {...register("password")} placeholder="Informe sua senha..." />
+            <input
+              id="password"
+              type="password"
+              {...register("password")}
+              placeholder="Informe sua senha..."
+            />
             <div>
               {errors.password && <span>{errors.password.message}</span>}
             </div>
