@@ -4,8 +4,9 @@ import style from "./page.module.css";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "@/app/contexts/AuthContext";
+import MessageModal from "@/app/components/Modals/MessageModal/MessageModal";
 
 const signUpSchema = z
   .object({
@@ -33,14 +34,20 @@ export default function Signup() {
   });
 
   const ctx = useContext(AuthContext);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [message, setMessage] = useState("");
+  const [isDanger, setIsDanger] = useState(false);
 
   function handleSubtmit(data: signUpFormData) {
     if (ctx?.verifyIfUserExists(data.email)) {
-      alert("Email já cadastrado");
+      setMessage("Email já cadastrado");
+      setIsDanger(true);
+      setIsModalOpen(true);
       return;
     }
     ctx?.createUser(data.name, data.email, data.password);
-    alert("Usuário criado com sucesso!");
+    setMessage("Usuário criado com sucesso!");
+    setIsModalOpen(true);
   }
 
   return (
@@ -100,6 +107,7 @@ export default function Signup() {
           <button type="submit">Sign Up</button>
         </form>
       </AccountContainer>
+      {isModalOpen && <MessageModal message={message} isDanger={isDanger} setIsModalOpen={setIsModalOpen} />}
     </div>
   );
 }

@@ -1,0 +1,54 @@
+.bgContainer {
+  background-color: rgba(0, 0, 0, 0.658);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 8px;
+  padding: 50px 100px;
+  gap: 20px;
+}
+
+.modalContainer h4 {
+  font-size: 24px;
+  color: #333;
+}
+.modalContainer button {
+  padding: 15px 80px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.modalContainer button:hover {
+  opacity: 90%;
+}
+
+.success {
+  background-color: #d4edda !important;
+  color: #155724 !important;
+}
+.success button {
+  background-color: #28a745 !important;
+}
+
+.danger {
+  background-color: #f8d7da !important;
+  color: #721c24 !important;
+}
+.danger button {
+  background-color: #dc3545 !important;
+}
