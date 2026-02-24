@@ -1,9 +1,9 @@
-export type Questions = {
+export type QuestionsType = {
   question: string;
   answer: string;
 };
 
-export const questions: Questions[] = [
+export const questions: QuestionsType[] = [
   {
     question: "O que é o GoalTracker?",
     answer:
@@ -36,7 +36,7 @@ export const questions: Questions[] = [
   },
   {
     question:
-      "Posso compartilhar meus objetivos com outras pessoas no GoalTracker?",
+      "Posso compartilhar os objetivos com outras pessoas no GoalTracker?",
     answer:
       "Sim, o GoalTracker permite que você compartilhe seus objetivos com amigos, familiares ou colegas de trabalho para obter apoio e motivação adicional.",
   },

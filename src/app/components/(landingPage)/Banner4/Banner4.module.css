@@ -1,12 +1,11 @@
 .container {
   background-color: rgb(240, 240, 255);
-  height: 500px;
+  min-height: 500px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  padding-bottom: 40px;
 }
 
 .container h2 {
@@ -15,4 +14,8 @@
   margin-bottom: 20px;
   border-bottom: 4px solid rgb(30, 30, 165);
   padding-bottom: 5px;
+}
+
+.header {
+  padding: 40px;
 }

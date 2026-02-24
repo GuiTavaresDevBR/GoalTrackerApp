@@ -12,3 +12,19 @@
   gap: 30px;
   padding: 50px;
 }
+
+.bannerContainer button {
+  padding: 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(30, 30, 165);
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.bannerContainer button:hover {
+  background-color: rgb(20, 20, 120);
+  cursor: pointer;
+}
