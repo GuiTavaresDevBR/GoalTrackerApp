@@ -2,4 +2,17 @@
   background-color: rgb(240, 240, 255);
   height: 500px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container h2 {
+  font-size: 2.5rem;
+  color: rgb(30, 30, 165);
+  margin-bottom: 20px;
+  border-bottom: 4px solid rgb(30, 30, 165);
+  padding-bottom: 5px;
 }
