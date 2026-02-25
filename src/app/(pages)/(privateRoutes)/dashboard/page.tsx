@@ -5,7 +5,6 @@ import style from "./page.module.css";
 import { useContext } from "react";
 import { AuthContext } from "@/app/contexts/AuthContext";
 import { useRouter } from "next/navigation";
-import LoadingModal from "@/app/components/Modals/LoadingModal/LoadingModal";
 
 export default function Dashboard() {
   const ctx = useContext(AuthContext);
@@ -19,7 +18,6 @@ export default function Dashboard() {
   return (
     <div className={style.container}>
       <h1>Dashboard</h1>
-      <LoadingModal />
     </div>
   );
 }

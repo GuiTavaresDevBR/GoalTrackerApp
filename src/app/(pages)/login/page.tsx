@@ -1,13 +1,14 @@
 "use client";
 import AccountContainer from "@/app/components/AccountContainer/AccountContainer";
 import style from "./page.module.css";
-import z from "zod";
+import z, { set } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "@/app/contexts/AuthContext";
 import MessageModal from "@/app/components/Modals/MessageModal/MessageModal";
 import { useRouter } from "next/navigation";
+import LoadingModal from "@/app/components/Modals/LoadingModal/LoadingModal";
 
 const loginSchema = z.object({
   email: z.email("Email inválido"),
@@ -29,6 +30,7 @@ export default function Login() {
   const ctx = useContext(AuthContext);
   const [message, setMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoadingOpen, setIsLoadingOpen] = useState(false);
 
   function handleSubtmit(data: loginFormData) {
     if (!ctx?.verifyIfUserExists(data.email)) {
@@ -41,7 +43,11 @@ export default function Login() {
       setIsModalOpen(true);
       return;
     }
-    router.push("/dashboard");
+    setIsLoadingOpen(true);
+    setTimeout(() => {
+      setIsLoadingOpen(false);
+      router.push("/dashboard");
+    }, 2000);
   }
 
   return (
@@ -80,6 +86,7 @@ export default function Login() {
           setIsModalOpen={setIsModalOpen}
         />
       )}
+      {isLoadingOpen && <LoadingModal />}
     </div>
   );
 }

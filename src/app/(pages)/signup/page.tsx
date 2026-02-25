@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "@/app/contexts/AuthContext";
 import MessageModal from "@/app/components/Modals/MessageModal/MessageModal";
+import LoadingModal from "@/app/components/Modals/LoadingModal/LoadingModal";
 
 const signUpSchema = z
   .object({
@@ -35,6 +36,7 @@ export default function Signup() {
 
   const ctx = useContext(AuthContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoadingModalOpen, setIsLoadingModalOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [isDanger, setIsDanger] = useState(false);
 
@@ -112,8 +114,10 @@ export default function Signup() {
           message={message}
           isDanger={isDanger}
           setIsModalOpen={setIsModalOpen}
+          setIsLoadingModalOpen={setIsLoadingModalOpen}
         />
       )}
+      {isLoadingModalOpen && <LoadingModal />}
     </div>
   );
 }
