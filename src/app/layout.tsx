@@ -15,8 +15,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,6 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AuthProvider>
+          <div className="stars" />
+          <div className="bottom-glow" />
           <Header />
           {children}
         </AuthProvider>

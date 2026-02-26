@@ -1,8 +1,10 @@
 .bannerContainer {
-  width: 100%;
-  height: 500px;
   display: flex;
-  background-color: rgb(240, 240, 255);
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 50px;
+  width: 100%;
 }
 
 .leftSide {
@@ -17,37 +19,43 @@
   flex-direction: column;
   justify-content: center;
   gap: 40px;
-  word-spacing: 10px;
+  word-spacing: 20px;
+  text-shadow: 2px 2px 2px black;
 }
 
 .titleContainer button {
-  height: 40px;
-  background-color: rgb(30, 30, 165);
+  height: 50px;
+  background-color: rgb(255, 18, 255);
   width: 250px;
-  margin: auto;
+
   border: none;
   color: white;
   letter-spacing: 2px;
-  border-radius: 5px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px black;
 }
 .titleContainer button:hover {
   cursor: pointer;
-  background-color: rgb(20, 20, 120);
+  background-color: rgba(255, 65, 255, 0.8);
 }
 
 .titleContainer a {
   color: white;
+  margin: auto;
 }
 .titleContainer h2 {
-  font-size: 40px;
+  font-size: 50px;
 }
 .titleContainer h2 span {
-  font-size: 45px;
-  color: rgb(30, 30, 165);
+  font-size: 50px;
+  color: rgb(255, 18, 255);
 }
 
 .titleContainer h4 {
-  color: gray;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+  word-spacing: 2px;
 }
 
 .rightSide {

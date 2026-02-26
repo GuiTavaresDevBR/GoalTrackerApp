@@ -2,16 +2,18 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(178, 178, 255);
+  background-color: rgba(0, 0, 0, 0.455);
   padding: 10px;
   color: white;
   text-shadow: 2px 2px 2px black;
+  margin-top: 10px;
 }
 
 .header span {
   font-size: 35px;
   font-weight: bold;
-  color: rgb(63, 63, 201);
+  color: rgb(44, 44, 220);
+  letter-spacing: 1px;
 }
 
 .header div {

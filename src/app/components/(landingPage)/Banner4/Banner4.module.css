@@ -1,5 +1,4 @@
 .container {
-  background-color: rgb(240, 240, 255);
   min-height: 500px;
   width: 100%;
   display: flex;
@@ -10,10 +9,12 @@
 
 .container h2 {
   font-size: 2.5rem;
-  color: rgb(30, 30, 165);
+  color: white;
   margin-bottom: 20px;
-  border-bottom: 4px solid rgb(30, 30, 165);
+  border-bottom: 5px solid white;
   padding-bottom: 5px;
+  text-shadow: 2px 2px 2px black;
+  letter-spacing: 1px;
 }
 
 .header {

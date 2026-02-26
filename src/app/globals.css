@@ -9,6 +9,110 @@ button {
   cursor: pointer;
 }
 
-a{
+a {
   text-decoration: none;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #0a0f1c;
+  color: white;
+}
+
+/* CAMADA PRINCIPAL DE PROFUNDIDADE */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: -3;
+  background:
+    radial-gradient(
+      ellipse at 20% 0%,
+      rgba(124, 58, 237, 0.7) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 80% 10%,
+      rgba(79, 70, 229, 0.6) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(168, 85, 247, 0.4) 0%,
+      transparent 65%
+    ),
+    linear-gradient(to bottom, #0a0f1c 0%, #111827 50%, #0a0f1c 100%);
+  filter: blur(80px);
+}
+
+/* NEBLINA SUAVE */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(
+      circle at 40% 60%,
+      rgba(255, 255, 255, 0.06),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 80%,
+      rgba(255, 255, 255, 0.04),
+      transparent 60%
+    );
+  pointer-events: none;
+}
+
+/* ESTRELAS NATURAIS (não gridadas) */
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 50% 60%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(
+      1.5px 1.5px at 70% 40%,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    radial-gradient(1px 1px at 90% 80%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(
+      1.5px 1.5px at 10% 75%,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    );
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.25;
+  animation: twinkle 6s infinite alternate ease-in-out;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.15;
+  }
+  to {
+    opacity: 0.35;
+  }
+}
+
+/* GLOW INFERIOR CINEMATOGRÁFICO */
+.bottom-glow {
+  position: absolute;
+  bottom: -200px;
+  width: 100%;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.08),
+    transparent 70%
+  );
+  filter: blur(60px);
+  pointer-events: none;
 }

@@ -14,15 +14,13 @@ export default function Banner1() {
             Transforme objetivos em hábitos diários <br /> e acompanhe seu
             progresso.
           </h4>
-          <button>
-            <Link href="/signup">Comece Agora</Link>
-          </button>
+          <Link href="/signup">
+            <button>Comece Agora</button>
+          </Link>
         </div>
       </div>
       <div className={style.rightSide}>
-        <div className={style.imageContainer}>
-
-        </div>
+        <div className={style.imageContainer}></div>
       </div>
     </div>
   );

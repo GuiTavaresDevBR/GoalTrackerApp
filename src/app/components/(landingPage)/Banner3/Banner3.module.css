@@ -3,16 +3,19 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 30px;
 }
 
 .title {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding-bottom: 30px;
+  font-size: 20px;
+  text-shadow: 2px 2px 2px black;
 }
 .title span {
-  color: rgb(30, 30, 165);
+  color: rgb(255, 18, 255);
 }
 
 .boxesContainer {
