@@ -3,12 +3,12 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 50px;
+  padding: 100px;
   width: 100%;
 }
 
 .leftSide {
-  flex: 1;
+  flex: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 40px;
-  word-spacing: 20px;
+  word-spacing: 10px;
   text-shadow: 2px 2px 2px black;
 }
 
@@ -27,7 +27,7 @@
   height: 50px;
   background-color: rgb(255, 18, 255);
   width: 250px;
-
+  font-size: 18px;
   border: none;
   color: white;
   letter-spacing: 2px;
@@ -44,10 +44,10 @@
   margin: auto;
 }
 .titleContainer h2 {
-  font-size: 50px;
+  font-size: 65px;
+  letter-spacing: 2px;
 }
 .titleContainer h2 span {
-  font-size: 50px;
   color: rgb(255, 18, 255);
 }
 
@@ -70,6 +70,6 @@
   background-image: url("https://jpimg.com.br/uploads/2023/05/entenda-como-adotar-habitos-saudaveis-muda-a-vida.jpg");
   background-position: center;
   background-size: cover;
-  box-shadow: 4px 4px 4px rgb(200, 200, 200);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.822);
   border-radius: 40px;
 }

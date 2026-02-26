@@ -12,8 +12,9 @@ export default function Banner1() {
           </h2>
           <h4>
             Transforme objetivos em hábitos diários <br /> e acompanhe seu
-            progresso.
+            progresso. <br /> 30 Dias Grátis.
           </h4>
+
           <Link href="/signup">
             <button>Comece Agora</button>
           </Link>

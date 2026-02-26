@@ -1,12 +1,13 @@
 .accountContainer {
-  border: 2px solid gray;
+  border: 1px solid white;
   width: 400px;
   min-height: 500px;
   border-radius: 20px;
-  box-shadow: 2px 2px 2px gray;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.691);
 }
 
 .header {
@@ -17,9 +18,11 @@
   border-bottom: 1px solid gray;
 }
 .header h2 {
-  color: rgb(178, 178, 255);
-  border-bottom: 2px solid rgb(145, 145, 247);
+  color: rgb(113, 113, 252);
+  border-bottom: 2px solid rgb(113, 113, 252);
   padding-bottom: 5px;
+  font-size: 30px;
+  
 }
 .formContainer {
   width: 100%;
@@ -47,8 +50,9 @@
 }
 
 .formContainer label {
-  color: gray;
+  color: white;
   padding-left: 5px;
+  margin-bottom: 5px;
 }
 .formContainer input {
   height: 30px;
@@ -60,7 +64,7 @@
 .formContainer button {
   width: 100%;
   height: 40px;
-  background-color: rgb(178, 178, 255);
+  background-color: rgb(113, 113, 252);
   color: white;
   border: none;
   border-radius: 5px;
@@ -68,6 +72,6 @@
 }
 
 .formContainer button:hover {
-  background-color: rgb(145, 145, 247);
+  background-color: rgb(113, 113, 252);
   cursor: pointer;
 }
