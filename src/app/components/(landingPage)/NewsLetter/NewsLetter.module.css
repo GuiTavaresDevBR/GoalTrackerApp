@@ -1,9 +1,9 @@
 .container {
-  min-height: 500px;
+  background-color: rgba(0, 0, 0, 0.621);
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  margin: 20px 0px;
+  padding: 100px;
 }

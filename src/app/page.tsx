@@ -8,6 +8,8 @@ import FrequentlyQuestions from "./components/(landingPage)/FrequentlyQuestions/
 import DataInfosCounter from "./components/(landingPage)/DataInfosCounter/DataInfosCounter";
 import HowDoesItWorks from "./components/(landingPage)/HowDoesItWorks/HowDoesItWorks";
 import FinalInvitation from "./components/(landingPage)/FinalInvitation/FinalInvitation";
+import UsersReports from "./components/(landingPage)/UsersReports/UsersReports";
+import NewsLetter from "./components/(landingPage)/NewsLetter/NewsLetter";
 
 export default function Home() {
   return (
@@ -16,8 +18,10 @@ export default function Home() {
       <WhyHabbitsAreImportant />
       <DataInfosCounter />
       <HowDoesItWorks />
-      <FrequentlyQuestions />
+      <UsersReports />
       <FinalInvitation />
+      <FrequentlyQuestions />
+      <NewsLetter />
     </main>
   );
 }

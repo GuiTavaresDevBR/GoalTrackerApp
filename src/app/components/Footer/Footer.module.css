@@ -1,0 +1,18 @@
+.footer {
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  text-align: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer div {
+  flex: 1;
+  border-right: 1px solid white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

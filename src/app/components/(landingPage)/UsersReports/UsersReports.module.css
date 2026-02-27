@@ -1,0 +1,84 @@
+.container {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 60px;
+  padding: 120px;
+}
+
+.container h2 {
+  font-size: 50px;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
+.container h2 span {
+  color: rgb(255, 18, 255);
+}
+
+.cardsSelection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.reportContainer {
+  background-color: rgba(255, 255, 255, 0.665);
+  color: black;
+  padding: 20px;
+  width: 350px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid white;
+  box-shadow: 2px 2px 2px gray;
+}
+.reportContainer:hover {
+  box-shadow: 4px 4px 4px rgb(255, 18, 255);
+}
+
+.header {
+  display: flex;
+  gap: 30px;
+  padding: 10px;
+}
+
+.messageContainer {
+}
+
+.imgSimulator {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+
+.infosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.infosContainer h3 {
+  font-size: 18px;
+}
+
+.infosContainer p {
+  font-size: 14px;
+  color: gray;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.messageContainer {
+  text-align: center;
+  font-style: italic;
+  color: rgb(45, 45, 45);
+}
