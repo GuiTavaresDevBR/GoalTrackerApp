@@ -16,7 +16,7 @@
 }
 
 .container h2 span {
-  color: rgb(255, 18, 255);
+  color: var(--pink-color);
 }
 
 .cardsSelection {
@@ -40,7 +40,7 @@
   box-shadow: 2px 2px 2px gray;
 }
 .reportContainer:hover {
-  box-shadow: 4px 4px 4px rgb(255, 18, 255);
+  box-shadow: 5px 5px 5px var(--pink-shadow-color);
 }
 
 .header {

@@ -1,3 +1,12 @@
+:root {
+  --pink-color: rgb(255, 18, 255);
+  --pink-button-color: linear-gradient(90deg, #ff00cc, #ff4dff);
+  --pink-button-hover-color: linear-gradient(90deg, #ff4dff, #ff00cc);
+  --pink-shadow-color: rgba(255, 0, 200, 0.4);
+
+  --transparent-background: rgba(0, 0, 0, 0.579);
+}
+
 * {
   margin: 0;
   padding: 0;

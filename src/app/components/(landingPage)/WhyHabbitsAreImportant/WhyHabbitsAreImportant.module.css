@@ -16,7 +16,7 @@
   text-shadow: 2px 2px 2px black;
 }
 .title span {
-  color: rgb(255, 18, 255);
+  color: var(--pink-color);
 }
 
 .boxesContainer {
@@ -32,12 +32,12 @@
   margin: 10px 0;
   box-shadow: 5px 5px 15px gray;
   border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.579);
+  background-color: var(--transparent-background);
   transform: translateY(-8px);
   transition: transform 0.3s ease;
 }
 
 .singleBox:hover {
-  box-shadow: 5px 5px 15px rgb(255, 18, 255);
+  box-shadow: 5px 5px 20px var(--pink-shadow-color);
   transform: translateY(0);
 }

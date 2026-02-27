@@ -22,7 +22,6 @@
   border-bottom: 2px solid rgb(113, 113, 252);
   padding-bottom: 5px;
   font-size: 30px;
-  
 }
 .formContainer {
   width: 100%;
@@ -64,14 +63,15 @@
 .formContainer button {
   width: 100%;
   height: 40px;
-  background-color: rgb(113, 113, 252);
+  background: var(--pink-button-color);
   color: white;
   border: none;
   border-radius: 5px;
   margin-top: 10px;
+  box-shadow: 5px 5px 10px var(--pink-shadow-color);
 }
 
 .formContainer button:hover {
-  background-color: rgb(113, 113, 252);
+  background: var(--pink-button-hover-color);
   cursor: pointer;
 }

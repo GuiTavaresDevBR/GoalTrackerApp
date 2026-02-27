@@ -1,5 +1,5 @@
 .container {
-  background-color: rgba(0, 0, 0, 0.626);
+  background-color: var(--transparent-background);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,12 +16,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  text-shadow: 2px 2px 2px rgb(255, 18, 255);
+  text-shadow: 2px 2px 2px var(--pink-color);
 }
 .singleCounterContainer h2 {
   font-size: 80px;
   color: #fff;
-  border-bottom: 2px solid rgb(255, 18, 255);
+  border-bottom: 2px solid var(--pink-color);
 }
 .singleCounterContainer p {
   font-size: 30px;

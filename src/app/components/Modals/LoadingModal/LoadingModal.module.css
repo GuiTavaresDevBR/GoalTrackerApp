@@ -1,5 +1,5 @@
 .container {
-  background-color: rgba(0, 0, 0, 0.658);
+  background-color: rgba(0, 0, 0, 0.765);
   height: 100%;
   width: 100%;
   position: fixed;
@@ -12,8 +12,8 @@
 
 .loader {
   position: relative;
-  width: 88px;
-  height: 88px;
+  width: 120px;
+  height: 120px;
   animation: spin 1s linear infinite;
 }
 
@@ -21,7 +21,7 @@
   position: absolute;
   width: 24px;
   height: 24px;
-  background: #3b82f6;
+  background: rgb(255, 18, 255);
   border-radius: 50%;
 }
 

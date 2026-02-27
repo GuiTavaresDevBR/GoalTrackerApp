@@ -1,9 +1,87 @@
 .container {
-  background-color: rgba(0, 0, 0, 0.621);
+  background-color: var(--transparent-background);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 50px;
   margin: 20px 0px;
-  padding: 100px;
+  padding: 50px;
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.imageContainer {
+}
+.txtContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.txtContainer h3 {
+  color: gray;
+  text-shadow: 2px 2px 2px black;
+  letter-spacing: 2px;
+}
+.txtContainer h2 {
+  text-shadow: 2px 2px 2px black;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.upSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.upSide input {
+  padding: 10px;
+  width: 100%;
+  height: 60px;
+  outline: none;
+  border-radius: 20px;
+  border: none;
+  background-color: rgba(171, 171, 171, 0.791);
+  color: white;
+  font-size: 18px;
+}
+.upSide input::placeholder {
+  color: white;
+  font-size: 16px;
+}
+.upSide button {
+  padding: 10px;
+  height: 60px;
+  width: 150px;
+  background-color: white;
+  color: white;
+  background: var(--pink-button-color);
+  font-size: 18px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 5px 15px var(--pink-shadow-color);
+}
+
+.upSide button:hover {
+  background: var(--pink-button-hover-color);
+  transform: scale(1.05);
+}
+
+.downSide {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgb(185, 185, 185);
+  padding: 0px 20px;
 }
