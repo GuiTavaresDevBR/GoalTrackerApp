@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "src/app/components/(landingPage)/Banner7"  ],
+, "src/app/components/(landingPage)/UsersReports"  ],
   "exclude": ["node_modules"]
 }

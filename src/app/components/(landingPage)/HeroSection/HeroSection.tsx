@@ -1,6 +1,6 @@
-import style from "./Banner1.module.css";
+import style from "./HeroSection.module.css";
 import Link from "next/link";
-export default function Banner1() {
+export default function HeroSection() {
   return (
     <div className={style.bannerContainer}>
       <div className={style.leftSide}>

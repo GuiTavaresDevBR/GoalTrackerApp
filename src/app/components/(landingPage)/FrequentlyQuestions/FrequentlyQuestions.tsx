@@ -1,9 +1,9 @@
 "use client";
 import { questions } from "@/app/utils/questions";
-import style from "./Banner4.module.css";
+import style from "./FrequentlyQuestions.module.css";
 import { QuestionContainer } from "../QuestionContainer/QuestionContainer";
 
-export default function Banner4() {
+export default function FrequentlyQuestions() {
   return (
     <div className={style.container}>
       <div className={style.header}>

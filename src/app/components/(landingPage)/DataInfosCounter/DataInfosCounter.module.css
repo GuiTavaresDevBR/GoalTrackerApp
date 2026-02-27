@@ -1,0 +1,30 @@
+.container {
+  background-color: rgba(0, 0, 0, 0.626);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px;
+  width: 100%;
+  gap: 80px;
+}
+.singleCounterContainer {
+  min-width: 200px;
+  min-height: 200px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-shadow: 2px 2px 2px rgb(255, 18, 255);
+}
+.singleCounterContainer h2 {
+  font-size: 80px;
+  color: #fff;
+  border-bottom: 2px solid rgb(255, 18, 255);
+}
+.singleCounterContainer p {
+  font-size: 30px;
+  color: #fff;
+  letter-spacing: 1px;
+}

@@ -1,5 +1,5 @@
-import style from "./Banner3.module.css";
-export default function Banner3() {
+import style from "./WhyHabbitsAreImportant.module.css";
+export default function WhyHabbitsAreImportant() {
   return (
     <div className={style.container}>
       <div className={style.title}>
