@@ -1,5 +1,7 @@
+import Image from "next/image";
 import style from "./HeroSection.module.css";
 import Link from "next/link";
+import macappImage from "@/app/assets/image/macapp.png";
 export default function HeroSection() {
   return (
     <div className={style.bannerContainer}>
@@ -21,7 +23,14 @@ export default function HeroSection() {
         </div>
       </div>
       <div className={style.rightSide}>
-        <div className={style.imageContainer}></div>
+        <Image
+          src={macappImage}
+          alt="Hero Image"
+          width={800}
+          height={600}
+          className={style.img}
+        />
+        {/* <div className={style.imageContainer}></div> */}
       </div>
     </div>
   );

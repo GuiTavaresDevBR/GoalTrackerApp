@@ -1,3 +1,4 @@
+import SingleBoxContainer from "./SingleBoxContainer";
 import style from "./WhyHabbitsAreImportant.module.css";
 export default function WhyHabbitsAreImportant() {
   return (
@@ -8,9 +9,9 @@ export default function WhyHabbitsAreImportant() {
         </h2>
       </div>
       <div className={style.boxesContainer}>
-        <div className={style.singleBox}></div>
-        <div className={style.singleBox}></div>
-        <div className={style.singleBox}></div>
+        <SingleBoxContainer />
+        <SingleBoxContainer />
+        <SingleBoxContainer />
       </div>
     </div>
   );

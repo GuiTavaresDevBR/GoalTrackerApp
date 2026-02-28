@@ -37,7 +37,32 @@
   transition: transform 0.3s ease;
 }
 
-.singleBox:hover {
+.singleBoxContainer {
+  min-height: 300px;
+  width: 400px;
+  border: 2px solid rgb(240, 240, 255);
+  margin: 10px 0;
+  box-shadow: 5px 5px 15px gray;
+  border-radius: 20px;
+  background-color: var(--transparent-background);
+  transform: translateY(-8px);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px;
+  text-align: center;
+}
+.singleBoxContainer:hover {
   box-shadow: 5px 5px 20px var(--pink-shadow-color);
   transform: translateY(0);
+}
+
+.icon {
+  height: 100px;
+  width: 100px;
+  color: var(--pink-color);
+  box-shadow: 2px 2px 5px var(--pink-shadow-color);
 }

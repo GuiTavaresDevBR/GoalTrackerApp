@@ -7,7 +7,7 @@ export default function FrequentlyQuestions() {
   return (
     <div className={style.container}>
       <div className={style.header}>
-        <h2> Dúvidas Frequentes: </h2>
+        <h2> <span>FAQ: </span>Dúvidas Frequentes: </h2>
       </div>
       <div className={style.faqContainer}>
         {questions.map((question, index) => (

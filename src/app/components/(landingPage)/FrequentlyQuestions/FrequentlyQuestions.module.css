@@ -17,6 +17,12 @@
   letter-spacing: 1px;
 }
 
+.container span {
+  color: var(--pink-color);
+  font-size: 40px;
+  text-shadow: 3px 3px 3px var(--pink-shadow-color);
+}
+
 .header {
   padding: 40px;
 }
